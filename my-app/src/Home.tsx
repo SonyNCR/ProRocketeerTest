@@ -22,7 +22,6 @@ function Home() {
       <td>{post.title}</td>
       <td>{post.body}</td>
       <td>
-        {/* <Link to={`/edit/${post.id}`}>✎</Link> */}
         <Button variant="primary" onClick={()=>{history.push(`/edit/${post.id}`)}}>✎</Button>
       </td>
       <td><Button variant="danger" onClick={() => {

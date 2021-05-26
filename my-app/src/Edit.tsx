@@ -47,7 +47,13 @@ function Edit() {
           <Form.Label column md="2" style={labelStyle}>{strings.postTitle}</Form.Label>
           <Col>
             <Form.Control type="text" value={post?.title} onChange={(event) => {
-
+              let updatedPost: Post = {
+                id: post?.id ?? 1,
+                userId: post?.userId ?? 1,
+                title: event.target.value,
+                body:post?.body ?? ""
+              }
+              setPost(updatedPost);
             }} placeholder={strings.postTitle}/>
           </Col>
         </Form.Group>
@@ -55,7 +61,13 @@ function Edit() {
           <Form.Label column md="2" style={labelStyle}>{strings.postBody}</Form.Label>
           <Col>
             <Form.Control type="text" value={post?.body} onChange={(event) => {
-              
+              let updatedPost: Post = {
+                id: post?.id ?? 1,
+                userId: post?.userId ?? 1,
+                title: post?.title ?? "",
+                body:event.target.value
+              }
+              setPost(updatedPost);
             }} placeholder={strings.postBody} />
           </Col>
         </Form.Group>
